@@ -1,5 +1,5 @@
 import { SERVER } from "../../config/config.json";
-import { axios } from "axios";
+import axios from "axios";
 
 class AuthApi {
   async Login(id, email) {
@@ -8,7 +8,7 @@ class AuthApi {
       email,
     };
 
-    const response = axios.post(`${SERVER}/auth/login`, body);
+    const response = await axios.post(`${SERVER}/auth/login`, body);
     return response;
   }
 }

@@ -63,8 +63,8 @@
 }
 
 .email-input {
-  width: 250px;
-  margin-right: auto;
+  width: 240px;
+  margin-right: 10px;
 }
 
 .signUp-form-input-button {
@@ -78,7 +78,6 @@
   color: white;
   font-size: 1rem;
   font-weight: 500;
-  width: 320px;
   height: 40px;
   box-sizing: border-box;
   outline: none;
@@ -86,7 +85,6 @@
 }
 
 .email-button {
-  width: 60px;
 }
 
 .email-button:focus,
@@ -151,4 +149,8 @@
 
 .hidden {
   display: none;
+}
+
+.name {
+  width: 200px;
 }

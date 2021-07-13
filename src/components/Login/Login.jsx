@@ -20,7 +20,7 @@ const Login = () => {
       <div className="signIn">
         <div className="signIn-form">
           <div className="signIn-form-title">
-            <Link className="signIn-form-title-Link" to="/">
+            <Link className="signIn-form-title-Link" to="/main">
               SON을 내밀다
             </Link>
           </div>

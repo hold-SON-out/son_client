@@ -1,12 +1,13 @@
 import React from "react";
 import "./SignUp.css";
+import { Link } from "react-router-dom";
 const SignUp = () => {
   return (
     <>
       <div className="signUp">
         <div className="signUp-form">
           <div className="signUp-form-title">
-            <Link className="signUp-form-title-link" to="/">
+            <Link className="signUp-form-title-link" to="/main">
               SON을 내밀다
             </Link>
             <div className="signUp-form-title-Subtitle">
@@ -40,21 +41,23 @@ const SignUp = () => {
               placeholder="비밀번호 확인"
             />
             <div className="signUp-form-input-title">이름</div>
-            <input
-              className="signUp-form-input-item"
-              type="text"
-              placeholder="이름"
-            />
+            <div className>
+              <input
+                className="signUp-form-input-item name"
+                type="text"
+                placeholder="이름"
+              />
+              <div>입양자</div>
+              <div>기관</div>
+            </div>
           </div>
           <div className="signUp-form-button">
-            <button className="signUp-form-button-item" onClick={handleSignUp}>
-              회원가입
-            </button>
+            <button className="signUp-form-button-item">회원가입</button>
           </div>
           <div className="signUp-form-signIn">
             <span className="signUp-form-signIn-item">
               이미 계정이 있으신가요?{" "}
-              <Link className="signUp-form-signIn-itme-after" to="/signIn">
+              <Link className="signUp-form-signIn-itme-after" to="/">
                 로그인
               </Link>
             </span>
