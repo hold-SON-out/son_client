@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import baby from "../../assets/images/baby.png";
+import searchFamily from "../../assets/images/searchFamily.png";
+import community from "../../assets/images/community.png";
+import addKid from "../../assets/images/addKid.png";
+import nextLevel from "../../assets/images/nextLevel.png";
 import useScroll from "../../Hooks/useScroll";
 import "./Main.css";
 
@@ -29,16 +33,27 @@ const Main = () => {
       />
       <div className="m-cards">
         <Link to="/kidList">
-          <div className="m-card">이동하기</div>
+          <div className="m-card">
+            가족 찾기
+            <img className="m-c-item" src={searchFamily} alt="" />
+          </div>
         </Link>
         <Link to="/kidList">
-          <div className="m-card">이동하기</div>
+          <div className="m-card">
+            커뮤니티 <img className="m-c-item" src={community} alt="" />
+          </div>
         </Link>
         <Link to="/kidList">
-          <div className="m-card">이동하기</div>
+          <div className="m-card">
+            아이 등록
+            <img className="m-c-item" src={addKid} alt="" />
+          </div>
         </Link>
         <Link to="/kidList">
-          <div className="m-card">이동하기</div>
+          <div className="m-card">
+            법적 절차
+            <img className="m-c-item" src={nextLevel} alt="" />
+          </div>
         </Link>
       </div>
       <div
