@@ -9,12 +9,15 @@ const Login = () => {
   const id = useInput("");
   const password = useInput("");
   const TryLogin = async () => {
-    if (!id.value || !password.value) {
-      alert("아이디 또는 비밀번호를 입력하지 않았습니다.");
-    } else {
-      const response = AuthApi.Login(id.value, password.value);
-      console.log(response);
-    }
+    console.log("ads");
+    // if (!id.value || !password.value) {
+    //   alert("아이디 또는 비밀번호를 입력하지 않았습니다.");
+    // } else {
+    //   const response = await AuthApi.Login(id.value, password.value);
+    //   console.log(response);
+    // }
+    const response = await AuthApi.Login(id.value, password.value);
+    console.log(response);
   };
   return (
     <>

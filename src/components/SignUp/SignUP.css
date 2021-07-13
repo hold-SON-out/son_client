@@ -153,4 +153,34 @@
 
 .name {
   width: 200px;
+  margin-right: 10px;
+}
+
+.signUp-form-input-item-lastBox {
+  display: flex;
+  height: 40px;
+}
+
+.Adopted-person {
+  border: 1px solid #d7e2eb;
+  width: 55px;
+  border-radius: 5px 0 0 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+  background-color: #0078ff;
+  justify-content: center;
+}
+
+.Institution {
+  width: 55px;
+  border-radius: 0 5px 5px 0;
+  color: white;
+  background-color: #0078ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #d7e2eb;
+  border-top: 1px solid #d7e2eb;
+  border-right: 1px solid #d7e2eb;
 }

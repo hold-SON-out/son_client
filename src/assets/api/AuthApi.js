@@ -2,13 +2,30 @@ import { SERVER } from "../../config/config.json";
 import axios from "axios";
 
 class AuthApi {
-  async Login(id, email) {
+  async Login(id, password) {
+    console.log("apu");
     const body = {
       id,
-      email,
+      password,
+    };
+    console.log(id, password);
+    const response = await axios.post(`${SERVER}/auth/login`, body);
+    console.log(response);
+    return response;
+  }
+
+  async SignUp(id, password, name, purpose, agency, area) {
+    const body = {
+      id,
+      password,
+      name,
+      purpose,
+      agency,
+      area,
     };
 
-    const response = await axios.post(`${SERVER}/auth/login`, body);
+    const response = await axios.post(`${SERVER}/auth/register`, body);
+    console.log(response);
     return response;
   }
 }
