@@ -1,16 +1,19 @@
 import React from "react";
 import "./SignUP.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Logo from "../../assets/images/logo.jpg";
 import useInput from "../../Hooks/useInput";
 import AuthApi from "../../assets/api/AuthApi";
 import { useEffect } from "react";
+
 const SignUp = ({
   ChangePurposeAdopted,
   ChangePurposeAdopting,
   purpose,
   show,
   setShow,
+  check,
+  setCheck,
 }) => {
   const id = useInput(null);
   const password = useInput(null);
@@ -18,6 +21,7 @@ const SignUp = ({
   const name = useInput(null);
   const agency = useInput(null);
   const area = useInput(null);
+  const history = useHistory();
 
   useEffect(() => {
     onChangeCheckPassword();
@@ -38,17 +42,25 @@ const SignUp = ({
       } else {
         const response = await AuthApi.CheckId(id.value);
         console.log(response);
+        if (response.data.data === "사용 가능한 아이디입니다.") {
+          alert("사용 가능한 아이디입니다.");
+          setCheck(true);
+        } else {
+          alert("사용 불가능한 아이디입니다.");
+          setCheck(false);
+        }
       }
     } catch (e) {
-      console.log(e);
+      e.response.status === 400 && alert("사용 불가능한 아이디입니다");
     }
   };
   const trySignUp = async () => {
     try {
       if (show === false) {
         alert("비밀번호가 일치하지 않습니다");
-      }
-      if (purpose === "ADOPTING") {
+      } else if (check === false) {
+        alert("아이디 중복확인을 하시거나 사용 불가능한 아이디입니다.");
+      } else if (purpose === "ADOPTING") {
         if (
           !id.value ||
           !password.value ||
@@ -57,13 +69,14 @@ const SignUp = ({
         ) {
           alert("입력하지 않은 칸이 존재합니다");
         } else {
-          const response = AuthApi.SignUp(
+          const response = await AuthApi.SignUp(
             id.value,
             password.value,
             name.value,
             purpose
           );
-          console.log(response);
+          alert("회원가입 완료되었습니다");
+          history.push("/");
         }
       } else {
         if (
@@ -76,7 +89,7 @@ const SignUp = ({
         ) {
           alert("입력하지 않은 칸이 존재합니다");
         } else {
-          const response = AuthApi.SignUp(
+          const response = await AuthApi.SignUp(
             id.value,
             password.value,
             name.value,
@@ -85,10 +98,12 @@ const SignUp = ({
             area.value
           );
           console.log(response);
+          alert("회원가입 완료되었습니다");
+          history.push("/");
         }
       }
     } catch (e) {
-      console.log(e);
+      e.response.status === 400 && alert("회원가입에 실패하였습니다");
     }
   };
   return (
@@ -124,7 +139,7 @@ const SignUp = ({
             <div className="signUp-form-input-title">비밀번호</div>
             <input
               className="signUp-form-input-item"
-              type="text"
+              type="password"
               placeholder="비밀번호"
               {...password}
             />
@@ -132,7 +147,7 @@ const SignUp = ({
               <div className="signUp-form-input-title">비밀번호 확인</div>
               <input
                 className="signUp-form-input-item-check"
-                type="text"
+                type="password"
                 placeholder="비밀번호 확인"
                 {...checkPassword}
               />

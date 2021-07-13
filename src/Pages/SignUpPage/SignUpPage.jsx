@@ -5,6 +5,7 @@ import SignUp from "../../components/SignUp/SignUp";
 const SignUpPage = () => {
   const [purpose, setPurpose] = useState("ADOPTING");
   const [show, setShow] = useState(false);
+  const [check, setCheck] = useState(false);
   const ChangePurposeAdopting = () => {
     setPurpose("ADOPTING");
   };
@@ -21,6 +22,8 @@ const SignUpPage = () => {
         purpose={purpose}
         show={show}
         setShow={setShow}
+        check={check}
+        setCheck={setCheck}
       />
     </>
   );
