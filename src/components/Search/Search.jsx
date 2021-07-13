@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Search.css";
 
-const Search = ({ searcher, searchValue }) => {
+const Search = ({ searcher, searchValue, trySearcher }) => {
   return (
     <div className="search">
       <div className="s-form">
@@ -18,7 +18,9 @@ const Search = ({ searcher, searchValue }) => {
           type="text"
           {...searchValue}
         />
-        <button className="s-button">검색하기</button>
+        <button className="s-button" onClick={trySearcher}>
+          검색하기
+        </button>
       </div>
     </div>
   );

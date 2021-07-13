@@ -11,10 +11,25 @@ const KidListPage = () => {
   const searchValue = useInput("");
 
   const [kids, setKids] = useState([]);
+  const trySearcher = async () => {
+    console.log();
+    try {
+      await KidApi.getSearch(searcher.value, searchValue.value).then(current =>
+        setKids(current.data.data)
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const tryGetKidList = async () => {
-    const response = await KidApi.getKidList();
-    console.log(response.data.data);
-    setKids(response.data.data);
+    try {
+      const response = await KidApi.getKidList();
+      console.log(response.data.data);
+      setKids(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
   useEffect(() => tryGetKidList(), []);
 
@@ -22,7 +37,11 @@ const KidListPage = () => {
     <div>
       <Header />
       <KidList kids={kids}>
-        <Search searcher={searcher} searchValue={searchValue} />
+        <Search
+          searcher={searcher}
+          searchValue={searchValue}
+          trySearcher={trySearcher}
+        />
       </KidList>
     </div>
   );
