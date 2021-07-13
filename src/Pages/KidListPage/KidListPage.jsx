@@ -1,5 +1,6 @@
 import React from "react";
 import KidList from "../../components/KidList/KidList";
+import Header from "../../components/Header/Header";
 
 const KidListPage = () => {
   const kids = [
@@ -474,6 +475,7 @@ const KidListPage = () => {
   ];
   return (
     <div>
+      <Header />
       <KidList kids={kids} />
     </div>
   );

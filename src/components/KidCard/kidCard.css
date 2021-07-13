@@ -7,6 +7,9 @@
   display: grid;
   grid-template-columns: 175px 1fr;
   grid-template-rows: 237.5 1fr;
+  grid-template-areas:
+    "p n"
+    "b b";
 }
 
 .kC-image {
@@ -33,10 +36,11 @@
 }
 
 .kC-button {
+  grid-area: b;
   font-size: 1rem;
   cursor: pointer;
   border: 0;
-  border-radius: 0 0 10px 0;
+  border-radius: 0 0 10px 10px;
 }
 
 .kC-button:hover {
