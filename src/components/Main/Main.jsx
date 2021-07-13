@@ -43,7 +43,7 @@ const Main = () => {
             커뮤니티 <img className="m-c-item" src={community} alt="" />
           </div>
         </Link>
-        <Link to="/kidList">
+        <Link to="/addKid">
           <div className="m-card">
             아이 등록
             <img className="m-c-item" src={addKid} alt="" />
