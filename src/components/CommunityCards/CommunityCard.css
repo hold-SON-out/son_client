@@ -1,0 +1,81 @@
+.communityTime {
+  font-size: 0.8rem;
+}
+.communityContent {
+  margin-top: 15px;
+}
+
+.communityProject {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 30%);
+  border: none;
+}
+.communityHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.communityTitle {
+  display: flex;
+  flex-direction: column;
+}
+
+.communityNav {
+  margin-top: 10px;
+  border-top: 1px solid #cfd0d3;
+  border-bottom: 1px solid #cfd0d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin-right: 5px;
+}
+.communityNavText {
+  color: #65666a;
+}
+
+.communityText-optionsForm {
+  display: inline-block;
+}
+.communityText-name {
+  font-size: 0.9rem;
+}
+.communityText-text {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.communityText-options {
+  display: inline-block;
+  min-width: 400px;
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #f1f2f6;
+}
+.communityText-time {
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.communityTextInput {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.communityTextInput-Input {
+  font-size: 1rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 20px;
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: #f1f2f6;
+}
