@@ -6,6 +6,7 @@ import MainPage from "./Pages/MainPage/MainPage";
 import SignUpPage from "./Pages/SignUpPage/SignUpPage";
 import DetaliPage from "./Pages/Details/DetaliPage";
 import AddKidPage from "./Pages/AddKidPage/AddKidPage";
+import LowPage from "./Pages/LowPage/LowPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/SignUP" component={SignUpPage} />
           <Route path="/Details" component={DetaliPage} />
           <Route path="/addKid" component={AddKidPage} />
+          <Route path="/low" component={LowPage} />
         </Switch>
       </Router>
     </div>
