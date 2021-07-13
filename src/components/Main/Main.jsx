@@ -26,11 +26,18 @@ const Main = () => {
         src={baby}
         alt=""
       />
-      <div className="m-cards"></div>
-      <div className="m-form" onScroll={onScroll}>
+      <div className="m-cards">
+        <div className="m-card">이동하기</div>
+        <div className="m-card">이동하기</div>
+        <div className="m-card">이동하기</div>
+        <div className="m-card">이동하기</div>
+      </div>
+      <div
+        className={"m-form " + (firstPage.value ? "front" : "back")}
+        onScroll={onScroll}
+      >
         <div className="m-f-title">SON을 내밀다</div>
       </div>
-      <div>a</div>
     </div>
   );
 };
