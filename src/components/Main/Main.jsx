@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import baby from "../../assets/images/baby.svg";
+import { Link } from "react-router-dom";
+import baby from "../../assets/images/baby.png";
 import useScroll from "../../Hooks/useScroll";
 import "./Main.css";
 
@@ -27,10 +28,18 @@ const Main = () => {
         alt=""
       />
       <div className="m-cards">
-        <div className="m-card">이동하기</div>
-        <div className="m-card">이동하기</div>
-        <div className="m-card">이동하기</div>
-        <div className="m-card">이동하기</div>
+        <Link to="/kidList">
+          <div className="m-card">이동하기</div>
+        </Link>
+        <Link to="/kidList">
+          <div className="m-card">이동하기</div>
+        </Link>
+        <Link to="/kidList">
+          <div className="m-card">이동하기</div>
+        </Link>
+        <Link to="/kidList">
+          <div className="m-card">이동하기</div>
+        </Link>
       </div>
       <div
         className={"m-form " + (firstPage.value ? "front" : "back")}

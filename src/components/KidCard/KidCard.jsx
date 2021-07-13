@@ -4,7 +4,7 @@ import "./kidCard.css";
 const KidCard = ({ kid }) => {
   return (
     <div className="kidCard">
-      <img src={kid.photo} alt="" className="kC-image" />
+      <img src={kid.file} alt="" className="kC-image" />
       <div className="kC-info">
         <div className="kC-name">{kid.name}</div>
         <div className="kC-age">나이 : {kid.age}세</div>

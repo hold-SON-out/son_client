@@ -7,9 +7,11 @@ const Header = () => {
   return (
     <div className="headerContent">
       <div className="header">
-        <img className="h-logo" src={logo} alt="" />
+        <Link to="/main">
+          <img className="h-logo" src={logo} alt="" />
+        </Link>
         <Link className="h-item" to="/kidList">
-          아이찾기
+          가족 찾기
         </Link>
         <Link className="h-item" to="/kidList">
           아이찾기

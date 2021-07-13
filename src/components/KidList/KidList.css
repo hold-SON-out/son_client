@@ -4,3 +4,9 @@
   flex-wrap: wrap;
   row-gap: 30px;
 }
+
+.k-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-bottom: 1px solid black;
+}
