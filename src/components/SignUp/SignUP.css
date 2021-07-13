@@ -1,0 +1,154 @@
+.signUp {
+  width: 100%;
+  min-height: 90vh;
+  background-color: #fff;
+}
+
+.signUp-form-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signUp-form-title-link {
+  font-size: 2rem;
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+}
+
+.signUp-form-title-Subtitle {
+  font-weight: 350;
+  font-size: 14px;
+  color: #75777e;
+}
+
+.signUp-form {
+  height: 90vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.signUp-form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.signUp-form-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.signUp-form-input-title {
+  padding-bottom: 6px;
+}
+
+.signUp-form-input-item {
+  width: 320px;
+  height: 40px;
+  font-size: 16px;
+  border: 1px solid #d7e2eb;
+  appearance: none;
+  outline: none;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  padding-left: 10px;
+  margin-bottom: 16px;
+}
+
+.signUp-form-input-email {
+  display: flex;
+}
+
+.email-input {
+  width: 250px;
+  margin-right: auto;
+}
+
+.signUp-form-input-button {
+}
+
+.signUp-form-input-button-item {
+  transition: 0.2s ease-in;
+  background-color: #0078ff;
+  border: 1px solid #0078ff;
+  border-radius: 0.25rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 320px;
+  height: 40px;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+}
+
+.email-button {
+  width: 60px;
+}
+
+.email-button:focus,
+.email-button:hover {
+  background-color: #3995ff;
+}
+
+.signUp-form-input-item:focus,
+.signUp-form-input-item:hover {
+  border-color: blue;
+}
+
+.signUp-form-input-error {
+  color: red;
+  font-size: 0.7rem;
+}
+
+.signUp-form-input-item::placeholder {
+  color: #d7e2eb;
+}
+
+.signUp-form-button-item {
+  transition: 0.2s ease-in;
+  background-color: #0078ff;
+  border: 1px solid #0078ff;
+  border-radius: 0.25rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 320px;
+  height: 40px;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+}
+
+.signUp-form-button-item:hover {
+  background-color: #3995ff;
+}
+
+.signUp-form-signIn-item {
+  color: #98a8b9;
+}
+
+.signUp-form-signIn-itme-after {
+  text-decoration: none;
+  margin-left: 10px;
+  color: black;
+}
+
+.signUp-form-signIn-itme-after::after {
+  box-sizing: border-box;
+  position: absolute;
+  padding-left: 0.25rem;
+  content: "〉";
+  transition: all 0.15s;
+}
+
+.signUp-form-signIn-itme-after:hover::after {
+  padding-left: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}

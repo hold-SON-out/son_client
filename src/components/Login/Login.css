@@ -1,0 +1,141 @@
+.signIn {
+  width: 100%;
+  background-color: #fff;
+}
+
+.signIn-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30vh;
+}
+
+.signIn-form-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.signIn-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.signIn-input-item {
+  margin-top: 8px;
+  width: 320px;
+  height: 40px;
+  font-size: 16px;
+  border: 1px solid #d7e2ed;
+  appearance: none;
+  outline: none;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+.signIn-input-item::placeholder {
+  color: #d7e2ed;
+}
+
+.signIn-input-item:hover {
+  border-color: #0078ff;
+}
+
+.signIn-input-item:focus {
+  border-color: #0078ff;
+}
+
+.signIn-submit {
+  margin-top: 24px;
+  border-radius: 0.25rem;
+  background-color: #0078ff;
+  border: 1px solid #0078ff;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 320px;
+  height: 40px;
+  box-sizing: border-box;
+  outline: none;
+  text-align: center;
+  flex-direction: column;
+  padding-top: 11.5px;
+}
+
+.signIn-submit:hover {
+  background-color: #016ae2;
+  cursor: pointer;
+}
+
+.another-approach {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.another-approach-item {
+  color: #98a8b9;
+}
+
+.another-approach-item-Link {
+  text-decoration: none;
+  margin-left: 10px;
+  color: black;
+}
+
+.another-approach-item-Link::after {
+  box-sizing: border-box;
+  position: absolute;
+  padding-left: 0.25rem;
+  content: "〉";
+  transition: all 0.15s;
+}
+
+.another-approach-item-Link:hover::after {
+  padding-left: 0.5rem;
+}
+
+.signIn-diver {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.signIn-diver-span .back {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 54px;
+  background-color: white;
+  color: #90929e;
+}
+
+.signIn-diver-span .back span {
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.signIn-diver-line {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  width: 320px;
+  height: 1px;
+  background-color: #ced0da;
+}
+
+.signIn-diver-span {
+  width: 320px;
+  text-align: center;
+  position: relative;
+}
+
+.signIn-form-title-Link {
+  text-decoration: none;
+  color: black;
+}
+
+.signIn-form-title-subtitle {
+  font-weight: 350;
+  font-size: 14px;
+  color: #75777e;
+  margin-bottom: 20px;
+}
