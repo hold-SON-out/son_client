@@ -1,0 +1,46 @@
+.kidCard {
+  padding: 10px;
+  width: 550px;
+  height: 295px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  display: grid;
+  grid-template-columns: 175px 1fr;
+  grid-template-rows: 237.5 1fr;
+}
+
+.kC-image {
+  width: 175px;
+  height: 237.5px;
+  object-fit: cover;
+}
+
+.kC-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.kC-info {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  font-size: 1.1rem;
+}
+
+.kC-button {
+  font-size: 1rem;
+  cursor: pointer;
+  border: 0;
+  border-radius: 0 0 10px 0;
+}
+
+.kC-button:hover {
+  color: white;
+  transition: 0.2s ease-in-out;
+  background-color: #66a6ff;
+}
