@@ -7,7 +7,7 @@ import useInput from "../../Hooks/useInput";
 import KidApi from "../../assets/api/KidApi";
 
 const KidListPage = () => {
-  const searcher = useSelect("이름");
+  const searcher = useSelect("name");
   const searchValue = useInput("");
 
   const [kids, setKids] = useState([]);

@@ -1,6 +1,6 @@
 .a-form {
   display: grid;
-  height: 80vh;
+  height: 600px;
   grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 2fr 1fr;
   grid-template-areas:

@@ -5,10 +5,12 @@ const useScroll = initialValue => {
   const onScroll = () => {
     const { scrollHeight } = document.body;
     const { scrollTop } = document.documentElement;
-    console.log(scrollTop, scrollHeight / 300);
     setValue(scrollTop < scrollHeight / 150);
   };
-  return { value, onScroll };
+  const onClick = () => {
+    setValue(!value);
+  };
+  return { value, onScroll, onClick };
 };
 
 export default useScroll;

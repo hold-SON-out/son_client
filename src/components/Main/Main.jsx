@@ -6,11 +6,11 @@ import community from "../../assets/images/community.png";
 import addKid from "../../assets/images/addKid.png";
 import nextLevel from "../../assets/images/nextLevel.png";
 import useScroll from "../../Hooks/useScroll";
+import mainBack from "../../assets/images/mainBack.jpg";
 import "./Main.css";
 
 const Main = () => {
   const firstPage = useScroll(true);
-  const [isLogoActive, setLogoActive] = useState(1);
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
 
@@ -18,10 +18,7 @@ const Main = () => {
   }, []);
 
   const onScroll = () => {
-    const { scrollTop } = document.documentElement;
-    console.log(scrollTop, "aa");
     firstPage.onScroll();
-    !firstPage.value && setLogoActive(isLogoActive + 1);
   };
 
   return (
@@ -32,13 +29,14 @@ const Main = () => {
         alt=""
       />
       <div className="m-cards">
+        <img className="m-img" src={mainBack} alt="" />
         <Link to="/kidList">
           <div className="m-card">
             가족 찾기
             <img className="m-c-item" src={searchFamily} alt="" />
           </div>
         </Link>
-        <Link to="/kidList">
+        <Link to="/communitymain">
           <div className="m-card">
             커뮤니티 <img className="m-c-item" src={community} alt="" />
           </div>
@@ -49,7 +47,7 @@ const Main = () => {
             <img className="m-c-item" src={addKid} alt="" />
           </div>
         </Link>
-        <Link to="/kidList">
+        <Link to="/low">
           <div className="m-card">
             법적 절차
             <img className="m-c-item" src={nextLevel} alt="" />
@@ -60,7 +58,9 @@ const Main = () => {
         className={"m-form " + (firstPage.value ? "front" : "back")}
         onScroll={onScroll}
       >
-        <div className="m-f-title">SON을 내밀다</div>
+        <div onClick={firstPage.onClick} className="m-f-title">
+          SON을 내밀다
+        </div>
       </div>
     </div>
   );
