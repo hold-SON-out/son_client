@@ -4,6 +4,7 @@ import LoginPage from "./Pages/LoginPage/LoginPage";
 import KidListPage from "./Pages/KidListPage/KidListPage.jsx";
 import MainPage from "./Pages/MainPage/MainPage";
 import SignUpPage from "./Pages/SignUpPage/SignUpPage";
+import DetaliPage from "./Pages/Details/DetaliPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/kidList" component={KidListPage} />
           <Route path="/main" component={MainPage} />
           <Route path="/SignUP" component={SignUpPage} />
+          <Route path="/Details" component={DetaliPage} />
         </Switch>
       </Router>
     </div>
