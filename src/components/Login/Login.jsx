@@ -4,20 +4,31 @@ import "./Login.css";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/images/logo.jpg";
 import AuthApi from "../../assets/api/AuthApi";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const id = useInput("");
   const password = useInput("");
+  const history = useHistory();
   const TryLogin = async () => {
     console.log("ads");
-    // if (!id.value || !password.value) {
-    //   alert("아이디 또는 비밀번호를 입력하지 않았습니다.");
-    // } else {
-    //   const response = await AuthApi.Login(id.value, password.value);
-    //   console.log(response);
-    // }
-    const response = await AuthApi.Login(id.value, password.value);
-    console.log(response);
+    try {
+      if (!id.value || !password.value) {
+        alert("아이디 또는 비밀번호를 입력하지 않았습니다.");
+      } else {
+        const response = await AuthApi.Login(id.value, password.value);
+        console.log(response.data);
+
+        if (response.data.status === "OK") {
+          localStorage.setItem("accessToken", response.data.data.accessToken);
+          history.push("/main");
+          alert("로그인을 성공하셨습니다");
+        }
+      }
+    } catch (err) {
+      console.log(err.response.status);
+      err.response.status === 400 && alert("로그인을 실패하셨습니다");
+    }
   };
   return (
     <>
