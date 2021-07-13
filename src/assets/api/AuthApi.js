@@ -25,7 +25,17 @@ class AuthApi {
     };
 
     const response = await axios.post(`${SERVER}/auth/register`, body);
-    console.log(response);
+
+    return response;
+  }
+
+  async CheckId(id) {
+    const body = {
+      id,
+    };
+    console.log(id);
+    const response = await axios.post(`${SERVER}/auth/check`, body);
+
     return response;
   }
 }
