@@ -1,0 +1,102 @@
+.Detail-Main {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.Detail-nav {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.Detail-text {
+  padding: 10px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 30%);
+  border: none;
+  height: 200px;
+  overflow: auto;
+  width: 790px;
+}
+
+.Detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.Detail-towerImg {
+  margin-right: 10px;
+}
+
+.img-name {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 30%);
+  border: none;
+}
+
+.Detail-Main-options-ageBirth {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Detail-Main-options-sexBlood {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Detail-Main-options-heightWeight {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Detail-Name {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.Detail-Main-options {
+  padding: 10px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 30%);
+  border: none;
+  margin-bottom: 20px;
+  height: 200px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.Detail-Main-Div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  width: 810px;
+}
+
+.Detail-nav-agency {
+  display: flex;
+  height: 30px;
+  padding: 10px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 30%);
+  border: none;
+  width: 375px;
+}
+
+.Detail-nav-area {
+  padding: 10px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 30%);
+  border: none;
+  height: 30px;
+  margin-right: 20px;
+  width: 375px;
+}
+
+.Detail {
+  margin-top: 150px;
+}
