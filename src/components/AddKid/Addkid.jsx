@@ -1,19 +1,23 @@
 import React from "react";
 import "./AddKid.css";
 
-const Addkid = ({ file }) => {
+const Addkid = ({ handleImageChange, preview }) => {
   return (
     <div className="addkid">
       <div className="content">
         <div className="a-form">
           <input
             id="a-file"
-            {...file}
+            onChange={handleImageChange}
             style={{ display: "none" }}
             type="file"
           />
           <label className="a-f-file" htmlFor="a-file">
-            사진
+            {preview ? (
+              <img className="a-f-f-image" src={preview.toString()} alt="" />
+            ) : (
+              <div>사진</div>
+            )}
           </label>
           <input className="a-f-name" type="text" placeholder="이름" />
           <input className="a-f-birth" type="date" placeholder="이름" />
@@ -38,7 +42,12 @@ const Addkid = ({ file }) => {
             placeholder="특이사항"
           />
           <textarea className="a-f-Introduce" placeholder="자기소개"></textarea>
-          <button className="a-f-button">제출하기</button>
+          <button
+            className="a-f-button"
+            onClick={() => console.log(preview.toString())}
+          >
+            제출하기
+          </button>
         </div>
       </div>
     </div>
