@@ -2,6 +2,7 @@ import React from "react";
 import useInput from "../../Hooks/useInput";
 import "./Login.css";
 import { Link } from "react-router-dom";
+import Logo from "../../assets/images/logo.jpg";
 import AuthApi from "../../assets/api/AuthApi";
 
 const Login = () => {
@@ -21,7 +22,7 @@ const Login = () => {
         <div className="signIn-form">
           <div className="signIn-form-title">
             <Link className="signIn-form-title-Link" to="/main">
-              SON을 내밀다
+              <img style={{ width: "350px" }} src={Logo} alt="" />
             </Link>
           </div>
           <div className="signIn-form-title-subtitle">
