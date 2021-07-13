@@ -150,10 +150,22 @@ const SignUp = ({
                 placeholder="이름"
                 {...name}
               />
-              <div className="Adopted-person" onClick={ChangePurposeAdopting}>
+              <div
+                className={
+                  purpose === "ADOPTING"
+                    ? "Adopted-person check"
+                    : "Adopted-person"
+                }
+                onClick={ChangePurposeAdopting}
+              >
                 입양자
               </div>
-              <div className="Institution" onClick={ChangePurposeAdopted}>
+              <div
+                className={
+                  purpose === "ADOPTED" ? "Institution check" : "Institution"
+                }
+                onClick={ChangePurposeAdopted}
+              >
                 기관
               </div>
             </div>

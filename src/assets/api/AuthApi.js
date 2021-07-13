@@ -30,11 +30,7 @@ class AuthApi {
   }
 
   async CheckId(id) {
-    const body = {
-      id,
-    };
-    console.log(id);
-    const response = await axios.post(`${SERVER}/auth/check`, body);
+    const response = await axios.post(`${SERVER}/auth/check?id=${id}`);
 
     return response;
   }

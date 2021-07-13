@@ -175,18 +175,18 @@
   border: 1px solid #d7e2eb;
   width: 55px;
   border-radius: 5px 0 0 5px;
-  color: white;
+  color: black;
   display: flex;
   align-items: center;
-  background-color: #0078ff;
+  background-color: white;
   justify-content: center;
 }
 
 .Institution {
   width: 55px;
   border-radius: 0 5px 5px 0;
-  color: white;
-  background-color: #0078ff;
+  color: black;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -202,4 +202,9 @@
 
 .passwordCheck {
   margin-bottom: 16px;
+}
+
+.check {
+  background-color: #0078ff;
+  color: white;
 }
