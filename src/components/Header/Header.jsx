@@ -14,13 +14,13 @@ const Header = () => {
           가족 찾기
         </Link>
         <Link className="h-item" to="/kidList">
-          아이찾기
+          커뮤니티
+        </Link>
+        <Link className="h-item" to="/addKid">
+          아이추가
         </Link>
         <Link className="h-item" to="/kidList">
-          아이찾기
-        </Link>
-        <Link className="h-item" to="/kidList">
-          아이찾기
+          법적절파
         </Link>
       </div>
     </div>

@@ -3,7 +3,8 @@ import male from "../../assets/images/male.png";
 import house from "../../assets/images/orphanage.png";
 import earth from "../../assets/images/worldwide.png";
 import "./Detail.css";
-const Detail = () => {
+const Detail = ({ kid }) => {
+  console.log(kid);
   return (
     <>
       <div className="content">
@@ -12,29 +13,32 @@ const Detail = () => {
             <div className="img-name">
               <img
                 className="babyFaceImg"
-                src="https://i.ytimg.com/vi/ERAMkP92arE/maxresdefault.jpg"
+                src={kid.file.fileLocation}
                 style={{ width: "350px", height: "466px", objectFit: "cover" }}
+                alt=""
               />
-              <div className="Detail-Name">이민욱</div>
+              <div className="Detail-Name">{kid.name}</div>
             </div>
             <div className="Detail-Main-Div">
               <div className="Detail-Main-options">
                 <div className="Detail-options-form">
-                  <div className="Detail-Main-options-name">이름: 이민욱</div>
+                  <div className="Detail-Main-options-name">
+                    이름: {kid.name}
+                  </div>
                   <div className="Detail-Main-options-ageBirth">
-                    <div className="Detail-age">나이:18세</div>
-                    <div className="Detail-Birth">(2004-02-14)</div>
+                    <div className="Detail-age">나이:{kid.age}</div>
+                    <div className="Detail-Birth">({kid.birth})</div>
                   </div>
                   <div className="Detail-Main-options-sexBlood">
                     <div className="Detail-sex">
                       성별:
-                      <img src={male} style={{ width: "25px" }} />
+                      <img src={male} style={{ width: "25px" }} alt="" />
                     </div>
-                    <div className="Detail-Blood">혈액형: AB</div>
+                    <div className="Detail-Blood">혈액형: {kid.bloodType}</div>
                   </div>
                   <div className="Detail-Main-options-heightWeight">
-                    <div className="Detail-height">키: 176cm</div>
-                    <div className="Detail-Weight">몸무게: 96kg</div>
+                    <div className="Detail-height">키: {kid.height}</div>
+                    <div className="Detail-Weight">몸무게: {kid.weight}</div>
                   </div>
                   <div className="Detail-Main-options-specialNote">
                     특이사항:없음
@@ -46,20 +50,22 @@ const Detail = () => {
                   <img
                     className="earthImg"
                     src={earth}
+                    alt=""
                     style={{ width: "30px", height: "30px" }}
                   />
-                  대구광역시
+                  {kid.area}
                 </div>
-                <div className="Detail-nav-agency">
+                <a href={kid.agencyUrl} className="Detail-nav-agency">
                   <img
                     className="Detail-towerImg"
                     src={house}
+                    alt=""
                     style={{ width: "30px", height: "30px" }}
                   />
-                  대구보육원
-                </div>
+                  {kid.agency}
+                </a>
               </div>
-              <div className="Detail-text">귀여운 아이입니다</div>
+              <div className="Detail-text">{kid.introduce}</div>
             </div>
           </div>
         </div>

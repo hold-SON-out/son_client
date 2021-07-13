@@ -7,6 +7,15 @@ class KidApi {
     console.log(response);
     return response;
   }
+  async getKidDetail(id) {
+    try {
+      const response = await axios.get(`${SERVER}/child/${id}`);
+      console.log(response);
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
 
 export default new KidApi();
