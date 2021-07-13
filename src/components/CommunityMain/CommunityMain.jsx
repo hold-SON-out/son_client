@@ -35,19 +35,21 @@ const CommunityMain = () => {
               <div className="communityContent">내용</div>
             </div>
             <div className="communityNav">
-              <img src={search} alt="" />
+              <img src={search} style={{ width: "30px", height: "30px" }} />
               <div className="communityNavText">댓글달기</div>
             </div>
             <div className="communityText">
-              <div>
-                <img src={search} alt="" />
-                <div className="communityText-text">댓끌</div>
+              <div className="communityText-optionsForm">
+                <div className="communityText-options">
+                  <div className="communityText-name">이름</div>
+                  <div className="communityText-text">댓끌</div>
+                </div>
+                <div className="communityText-time">3시간 전</div>
               </div>
-              <div>3시간 전</div>
             </div>
-            <div>
-              <img src={search} />
-              <input type="text" />
+            <div className="communityTextInput">
+              <img src={search} style={{ width: "30px", height: "30px" }} />
+              <input className="communityTextInput-Input" type="text" />
             </div>
           </div>
         </div>
