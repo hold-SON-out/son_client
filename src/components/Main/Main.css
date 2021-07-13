@@ -3,20 +3,31 @@
   height: 100vh;
   position: absolute;
   z-index: -1;
+  transition: all 700ms ease 0s;
+}
+
+.a {
+  z-index: -9;
+}
+
+.m-cards {
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  height: 100vh;
 }
 
 .back {
   transform: translate3d(0px, -100vh, 0px);
-  transition: all 700ms ease 0s;
+  z-index: -10;
 }
 
 .front {
   transform: translate3d(0px, 0vh, 0px);
-  transition: all 700ms ease 0s;
 }
 
 .m-form {
-  height: 101vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
