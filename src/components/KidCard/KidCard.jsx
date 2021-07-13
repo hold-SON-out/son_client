@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./kidCard.css";
 
 const KidCard = ({ kid }) => {
@@ -12,7 +13,9 @@ const KidCard = ({ kid }) => {
         <div className="kC-Uniqueness">특이사항 : {kid.Uniqueness}</div>
         <div className="kC-Introduce">소개글 : {kid.Introduce}</div>
       </div>
-      <button className="kC-button">프로필 보기</button>
+      <Link className="kC-button" to="/details">
+        프로필 보기
+      </Link>
     </div>
   );
 };
