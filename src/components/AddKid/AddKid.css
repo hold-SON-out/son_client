@@ -38,6 +38,7 @@
 }
 
 .a-f-name {
+  box-sizing: border-box;
   grid-area: name;
   border: 0;
   outline: none;

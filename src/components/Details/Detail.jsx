@@ -1,5 +1,6 @@
 import React from "react";
 import male from "../../assets/images/male.png";
+import woman from "../../assets/images/woman.png";
 import house from "../../assets/images/orphanage.png";
 import earth from "../../assets/images/worldwide.png";
 import "./Detail.css";
@@ -32,16 +33,17 @@ const Detail = ({ kid }) => {
                   <div className="Detail-Main-options-sexBlood">
                     <div className="Detail-sex">
                       성별:
-                      <img src={male} style={{ width: "25px" }} alt="" />
+                      {kid.sex === "W" ? (
+                        <img src={woman} style={{ width: "25px" }} alt="" />
+                      ) : (
+                        <img src={male} style={{ width: "25px" }} alt="" />
+                      )}
                     </div>
                     <div className="Detail-Blood">혈액형: {kid.bloodType}</div>
                   </div>
                   <div className="Detail-Main-options-heightWeight">
                     <div className="Detail-height">키: {kid.height}</div>
                     <div className="Detail-Weight">몸무게: {kid.weight}</div>
-                  </div>
-                  <div className="Detail-Main-options-specialNote">
-                    특이사항:없음
                   </div>
                 </div>
               </div>
