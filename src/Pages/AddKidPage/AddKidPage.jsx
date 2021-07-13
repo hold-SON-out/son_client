@@ -1,13 +1,25 @@
 import React, { useState, useEffect } from "react";
+import { SERVER } from "../../config/config.json";
+import axios from "axios";
 import Addkid from "../../components/AddKid/Addkid";
 import Header from "../../components/Header/Header";
 import useInput from "../../Hooks/useInput";
+import useSelect from "../../Hooks/useSelect";
 
 const AddKidPage = () => {
-  const file = useInput(null);
   const [image, setImage] = useState("");
   const [preview, setPreview] = useState();
   const [isChanged, setIsChanged] = useState(false);
+
+  const name = useInput("");
+  const age = useInput("");
+  const sex = useSelect("");
+  const birth = useInput("");
+  const bloodType = useSelect("");
+  const height = useInput("");
+  const weight = useInput("");
+  const introduce = useInput("");
+  const agencyUrl = useInput("");
 
   const handleImageChange = e => {
     let reader = new FileReader();
@@ -25,14 +37,50 @@ const AddKidPage = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(file.value);
-  }, []);
+  const tryAddSubmit = async () => {
+    const file = new FormData();
+    file.append("file", image);
+    file.append("name", name.value);
+    file.append("age", age.value);
+    file.append("sex", sex.value);
+    file.append("birth", birth.value);
+    file.append("bloodType", bloodType.value);
+    file.append("height", height.value);
+    file.append("weight", weight.value);
+    file.append("introduce", introduce.value);
+    file.append("agencyUrl", agencyUrl.value);
+    try {
+      await axios
+        .post(SERVER + "/child", file, {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNjI2MTczNjAyLCJleHAiOjMyNTIzNTA4MDR9.vDfs68-89jv_ID_5aGIOsOiiOlfLow54stJcXOF0olw",
+            ContentType: "multipart/form-data",
+          },
+        })
+        .then(response => console.log(response));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div>
       <Header />
-      <Addkid handleImageChange={handleImageChange} preview={preview} />
+      <Addkid
+        handleImageChange={handleImageChange}
+        preview={preview}
+        name={name}
+        age={age}
+        sex={sex}
+        birth={birth}
+        bloodType={bloodType}
+        height={height}
+        weight={weight}
+        introduce={introduce}
+        agencyUrl={agencyUrl}
+        tryAddSubmit={tryAddSubmit}
+      />
     </div>
   );
 };
