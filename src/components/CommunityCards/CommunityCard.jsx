@@ -3,16 +3,17 @@ import search from "../../assets/images/magnifying-glass.png";
 import message from "../../assets/images/message.png";
 import user from "../../assets/images/user.png";
 import "./CommunityCard.css";
-const CommunityCard = () => {
+const CommunityCard = ({ card }) => {
+  console.log(card);
   return (
     <>
       <div className="communityProject">
         <div className="communityHeader">
           <div className="communityTitle">
-            <div className="communityName">이민욱</div>
-            <div className="communityTime">3분전</div>
+            <div className="communityTitle-title">{card.title}</div>
+            <div className="communityName">{card.user.name}</div>
           </div>
-          <div className="communityContent">내용</div>
+          <div className="communityContent">{card.content}</div>
         </div>
         <div className="communityNav">
           <img
@@ -25,7 +26,9 @@ const CommunityCard = () => {
           <div className="communityText-optionsForm">
             <div className="communityText-options">
               <div className="communityText-name">이름</div>
-              <div className="communityText-text">댓끌</div>
+              <div className="communityText-text">
+                이 아이가 배가 부르다는 느낌을 알까요?
+              </div>
             </div>
             <div className="communityText-time">3시간 전</div>
           </div>

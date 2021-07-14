@@ -30,13 +30,17 @@
   border-top: 1px solid #cfd0d3;
   border-bottom: 1px solid #cfd0d3;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   padding: 5px;
+  padding-right: 1rem;
   margin-right: 5px;
 }
 .communityNavText {
   color: #65666a;
+}
+.communityName {
+  font-weight: 300;
 }
 
 .communityText-optionsForm {
@@ -52,7 +56,7 @@
 
 .communityText-options {
   display: inline-block;
-  min-width: 400px;
+  min-width: 50px;
   margin-top: 10px;
   border-radius: 20px;
   padding: 10px;
@@ -78,4 +82,8 @@
   outline: none;
   border: none;
   background-color: #f1f2f6;
+}
+
+.communityTitle-title {
+  font-size: 1.5rem;
 }
