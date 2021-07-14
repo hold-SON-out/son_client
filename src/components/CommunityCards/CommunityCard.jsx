@@ -19,10 +19,14 @@ const CommunityCard = ({ card, setCommunityList }) => {
     setCommunityList(data.data);
   };
   const tryPostComment = async () => {
-    const response = await CommunityApi.postComment(card.idx, input);
-    if (response.status === 200) {
-      await tryGetCommunityList();
-      setInput("");
+    if (input) {
+      const response = await CommunityApi.postComment(card.idx, input);
+      if (response.status === 200) {
+        await tryGetCommunityList();
+        setInput("");
+      }
+    } else {
+      alert("댓글을 입력해주세요");
     }
   };
 
