@@ -6,6 +6,7 @@ import MainPage from "./Pages/MainPage/MainPage";
 import SignUpPage from "./Pages/SignUpPage/SignUpPage";
 import DetaliPage from "./Pages/Details/DetaliPage";
 import AddKidPage from "./Pages/AddKidPage/AddKidPage";
+import WritePage from "./Pages/WritePage/WritePage";
 import LowPage from "./Pages/LowPage/LowPage";
 import CommunityMainPage from "./Pages/CommunityMain/CommunityMainPage";
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/addKid" component={AddKidPage} />
           <Route path="/low" component={LowPage} />
           <Route path="/communitymain" component={CommunityMainPage} />
+          <Route path="/write" component={WritePage} />
         </Switch>
       </Router>
     </div>
