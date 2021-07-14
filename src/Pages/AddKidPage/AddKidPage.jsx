@@ -60,8 +60,7 @@ const AddKidPage = () => {
       await axios
         .post(SERVER + "/child", file, {
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNjI2MTczNjAyLCJleHAiOjMyNTIzNTA4MDR9.vDfs68-89jv_ID_5aGIOsOiiOlfLow54stJcXOF0olw",
+            Authorization: "Bearer " + localStorage.getItem("accessToken"),
             ContentType: "multipart/form-data",
           },
         })
