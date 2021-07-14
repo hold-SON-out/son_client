@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Slogans from "../Slogans/Slogans";
 import "./Search.css";
 
 const Search = ({ searcher, searchValue, trySearcher }) => {
@@ -22,6 +23,7 @@ const Search = ({ searcher, searchValue, trySearcher }) => {
           검색하기
         </button>
       </div>
+      <Slogans />
     </div>
   );
 };

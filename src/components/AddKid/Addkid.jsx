@@ -1,4 +1,5 @@
 import React from "react";
+import Slogans from "../Slogans/Slogans";
 import "./AddKid.css";
 
 const Addkid = ({
@@ -18,6 +19,8 @@ const Addkid = ({
   return (
     <div className="addkid">
       <div className="content">
+        <div className="Title">아이 추가</div>
+        <Slogans />
         <div className="a-form">
           <input
             id="a-file"

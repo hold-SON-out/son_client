@@ -4,6 +4,7 @@ import CommunityApi from "../../assets/api/CommunityApi";
 import searchImg from "../../assets/images/magnifying-glass.png";
 import useInput from "../../Hooks/useInput";
 import CommunityCard from "../CommunityCards/CommunityCard";
+import Slogans from "../Slogans/Slogans";
 import "./CommunityMain.css";
 
 const CommunityMain = () => {
@@ -35,19 +36,19 @@ const CommunityMain = () => {
     return response;
   };
 
-  const trySearchKeyPress = (e) => {
+  const trySearchKeyPress = e => {
     console.log("Env");
     if (e.value === "") {
       tryGetCommunityList();
     }
     if (e.key === "Enter") {
       if (searchMenu === false) {
-        tryGetListForTitle().then((res) => {
+        tryGetListForTitle().then(res => {
           console.log(res);
           setCommunityList(res.data.data);
         });
       } else {
-        tryGetListForName().then((res) => {
+        tryGetListForName().then(res => {
           console.log(res);
           setCommunityList(res.data.data);
         });
@@ -64,6 +65,8 @@ const CommunityMain = () => {
   return (
     <>
       <div className="content">
+        <div className="Title">커뮤니티</div>
+        <Slogans />
         <div className="CommunityMainForm">
           <div className="CommunityMain-search">
             <div className="searchMain">
