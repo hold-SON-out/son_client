@@ -29,6 +29,20 @@ class CommunityApi {
     });
     console.log(body);
   }
+
+  async postComment(postId, content) {
+    const body = {
+      postId,
+      content,
+    };
+    const response = await axios.post(`${SERVER}/comment`, body, {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("accessToken"),
+      },
+    });
+    console.log(response);
+    return response;
+  }
 }
 
 export default new CommunityApi();

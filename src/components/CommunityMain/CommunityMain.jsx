@@ -5,14 +5,15 @@ import searchImg from "../../assets/images/magnifying-glass.png";
 import useInput from "../../Hooks/useInput";
 import CommunityCard from "../CommunityCards/CommunityCard";
 import "./CommunityMain.css";
+
 const CommunityMain = () => {
   const [communityList, setCommunityList] = useState([]);
   const [searchMenu, setSearchMenu] = useState(false);
   const search = useInput("");
   const tryGetCommunityList = async () => {
-    const response = await CommunityApi.GetCommunityList();
-    console.log(response.data.data[0].user);
-    setCommunityList(response.data.data);
+    const { data } = await CommunityApi.GetCommunityList();
+    console.log(data.data);
+    setCommunityList(data.data);
   };
 
   const searchTitle = () => {
@@ -35,11 +36,11 @@ const CommunityMain = () => {
   };
 
   const trySearchKeyPress = (e) => {
-    console.log(e);
-    setSearchMenu(e.target.value);
-    if (e.target.value === "") {
+    console.log("Env");
+    if (e.value === "") {
       tryGetCommunityList();
-    } else if (e.key === "Enter") {
+    }
+    if (e.key === "Enter") {
       if (searchMenu === false) {
         tryGetListForTitle().then((res) => {
           console.log(res);
@@ -76,7 +77,7 @@ const CommunityMain = () => {
                 placeholder="검색할 단어를 입력해주세요"
                 className="Community-searchInput"
                 {...search}
-                onChange={trySearchKeyPress}
+                onKeyPress={trySearchKeyPress}
               />
             </div>
             <div className="line">
@@ -104,9 +105,14 @@ const CommunityMain = () => {
               </div>
             </div>
           </div>
-          {communityList.map((card, idx) => (
-            <CommunityCard key={idx} card={card} />
-          ))}
+          {communityList &&
+            communityList.map((card, idx) => (
+              <CommunityCard
+                key={idx}
+                card={card}
+                setCommunityList={setCommunityList}
+              />
+            ))}
         </div>
       </div>
     </>
