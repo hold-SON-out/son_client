@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react/cjs/react.development";
+import { Link } from "react-router-dom";
 import CommunityApi from "../../assets/api/CommunityApi";
 import searchImg from "../../assets/images/magnifying-glass.png";
 import useInput from "../../Hooks/useInput";
@@ -64,6 +65,9 @@ const CommunityMain = () => {
   }, []);
   return (
     <>
+      <div className="writeButton">
+        <Link to="/write">글쓰기</Link>
+      </div>
       <div className="content">
         <div className="Title">커뮤니티</div>
         <Slogans />

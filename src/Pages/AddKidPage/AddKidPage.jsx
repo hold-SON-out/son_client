@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { SERVER } from "../../config/config.json";
 import axios from "axios";
 import Addkid from "../../components/AddKid/Addkid";
@@ -10,6 +11,12 @@ const AddKidPage = () => {
   const [image, setImage] = useState("");
   const [preview, setPreview] = useState();
   const [isChanged, setIsChanged] = useState(false);
+
+  const history = useHistory();
+
+  const goMain = () => {
+    history.push("/main");
+  };
 
   const name = useInput("");
   const age = useInput("");
@@ -58,7 +65,9 @@ const AddKidPage = () => {
             ContentType: "multipart/form-data",
           },
         })
-        .then(response => console.log(response));
+        .then(() => {
+          goMain();
+        });
     } catch (error) {
       console.log(error);
     }
