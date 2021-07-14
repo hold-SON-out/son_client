@@ -3,7 +3,7 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import "./Write.css";
 
-const Write = ({ title, contnent, setContent }) => {
+const Write = ({ title, contnent, setContent, tryWrite }) => {
   return (
     <div className="write">
       <div className="content">
@@ -24,7 +24,9 @@ const Write = ({ title, contnent, setContent }) => {
               }}
             />
           </div>
-          <button className="w-f-item">작성하기</button>
+          <button className="w-f-item" onClick={tryWrite}>
+            작성하기
+          </button>
         </div>
       </div>
     </div>

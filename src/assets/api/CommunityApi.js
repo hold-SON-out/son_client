@@ -17,6 +17,17 @@ class CommunityApi {
 
     return response;
   }
+  async postWrite(title, content) {
+    const body = {
+      title,
+      content,
+    };
+    await axios.post(`${SERVER}/post`, body, {
+      headers: {
+        Authorization: localStorage.getItem("accessToken"),
+      },
+    });
+  }
 }
 
 export default new CommunityApi();
