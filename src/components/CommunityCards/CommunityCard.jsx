@@ -45,7 +45,12 @@ const CommunityCard = ({ card, setCommunityList }) => {
             <div className="communityTitle-title">{card.title}</div>
             <div className="communityName">{card.user.name}</div>
           </div>
-          <div className="communityContent">{card.content}</div>
+          <div
+            className="communityContent"
+            dangerouslySetInnerHTML={{
+              __html: card.content,
+            }}
+          ></div>
         </div>
         <div className="communityNav" onClick={tryPostComment}>
           <img
