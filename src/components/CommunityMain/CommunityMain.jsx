@@ -7,6 +7,7 @@ import CommunityCard from "../CommunityCards/CommunityCard";
 import "./CommunityMain.css";
 const CommunityMain = () => {
   const [communityList, setCommunityList] = useState([]);
+  const [searchMenu, setSearchMenu] = useState(false);
   const search = useInput("");
   const tryGetCommunityList = async () => {
     const response = await CommunityApi.GetCommunityList();
@@ -14,23 +15,50 @@ const CommunityMain = () => {
     setCommunityList(response.data.data);
   };
 
+  const searchTitle = () => {
+    setSearchMenu(false);
+  };
+  const searchName = () => {
+    setSearchMenu(true);
+  };
+
   const tryGetListForTitle = async () => {
     const response = await CommunityApi.getListForTitle(search.value);
     console.log(response);
+    return response;
   };
 
   const tryGetListForName = async () => {
     const response = await CommunityApi.getListForName(search.value);
     console.log(response);
+    return response;
   };
 
   const trySearchKeyPress = (e) => {
-    console.log(e.key);
-    if (e.key === "Enter") {
+    console.log(e);
+    setSearchMenu(e.target.value);
+    if (e.target.value === "") {
+      tryGetCommunityList();
+    } else if (e.key === "Enter") {
+      if (searchMenu === false) {
+        tryGetListForTitle().then((res) => {
+          console.log(res);
+          setCommunityList(res.data.data);
+        });
+      } else {
+        tryGetListForName().then((res) => {
+          console.log(res);
+          setCommunityList(res.data.data);
+        });
+      }
     }
   };
+
   useEffect(() => {
-    tryGetCommunityList();
+    if (search.value) {
+    } else {
+      tryGetCommunityList();
+    }
   }, []);
   return (
     <>
@@ -48,13 +76,31 @@ const CommunityMain = () => {
                 placeholder="검색할 단어를 입력해주세요"
                 className="Community-searchInput"
                 {...search}
-                onKeyPress={trySearchKeyPress}
+                onChange={trySearchKeyPress}
               />
             </div>
             <div className="line">
               <div className="searchMainMenu">
-                <div className="searchMainMenuTitle">제목</div>
-                <div className="searchMainMenuWriter">작성자</div>
+                <div
+                  className={
+                    searchMenu
+                      ? "searchMainMenuTitle"
+                      : "searchMainMenuTitle choice"
+                  }
+                  onClick={searchTitle}
+                >
+                  제목
+                </div>
+                <div
+                  className={
+                    searchMenu
+                      ? "searchMainMenuWriter choice"
+                      : "searchMainMenuWriter"
+                  }
+                  onClick={searchName}
+                >
+                  작성자
+                </div>
               </div>
             </div>
           </div>
