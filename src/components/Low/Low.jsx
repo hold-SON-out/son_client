@@ -3,11 +3,14 @@ import "./Low.css";
 import Right from "../../assets/images/RightArrow.png";
 import Left from "../../assets/images/LeftArrow.png";
 import Bottom from "../../assets/images/BottomArrow.png";
+import Slogans from "../Slogans/Slogans";
 const Low = () => {
   return (
     <>
       <div className="content">
         <div className="low">
+          <div className="Title">법적절차</div>
+          <Slogans />
           <div className="lowTitle">국내입양 절차</div>
           <div className="lowSubTitle">
             ※ 구비서류는 입양기관에 따라 차이가 있을 수 있음

@@ -10,7 +10,9 @@ const WritePage = () => {
 
   const tryWrite = async () => {
     try {
-      await CommunityApi.postWrite(title.value, contnent);
+      !title.value || !contnent
+        ? console.log("a")
+        : await CommunityApi.postWrite(title.value, contnent);
     } catch (error) {
       console.log(error);
     }
