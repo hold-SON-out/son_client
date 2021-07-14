@@ -9,8 +9,11 @@ const WritePage = () => {
   const [contnent, setContent] = useState("");
 
   const tryWrite = async () => {
-    await CommunityApi.postWrite(title.value, contnent);
-    console.log(title.value, contnent);
+    try {
+      await CommunityApi.postWrite(title.value, contnent);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

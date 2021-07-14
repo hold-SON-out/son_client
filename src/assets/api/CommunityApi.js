@@ -24,9 +24,10 @@ class CommunityApi {
     };
     await axios.post(`${SERVER}/post`, body, {
       headers: {
-        Authorization: localStorage.getItem("accessToken"),
+        Authorization: "Bearer " + localStorage.getItem("accessToken"),
       },
     });
+    console.log(body);
   }
 }
 
